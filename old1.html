@@ -1,0 +1,31 @@
+<script>
+for (var i = 0; i < 101; i++) {
+        setTimeout(a , 10*i)
+    
+}i = 0
+function a(){
+    document.getElementById("percent").innerHTML = 'loading..' + i + '%'
+    console.log(i)
+    document.getElementById("mon1").style.width = i + '%'
+    if (i > 90) {
+        document.getElementById("mon1").style.height = (i-89) * 8 + '%'
+    }
+    if (i == 100) {
+        getIndex('2.html')
+    }
+    i++
+} 
+    
+
+    
+</script>
+<p id="percent">1</p>
+<div id="mon1" style="color: #fff; background-color: #000;">digitalcheck...</div>
+
+
+
+
+
+
+
+

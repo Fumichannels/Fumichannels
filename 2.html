@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Emulator</title>
+    <script src="change.js"></script>
+    
+<script>
+    function gettab(data1,data2){
+        if(data1 == 1){
+            data3 = 'ifr2'
+            var newElement = document.createElement("iframe"); // p要素作成
+            newElement.setAttribute("id",data3); // p要素にidを設定
+            var parentDiv = document.getElementById("body");
+            var childP3 = document.getElementById("child-p3");
+            parentDiv.insertBefore(newElement, childP3);
+            document.getElementById(data3).src = data2
+            document.getElementById(data3).style.display = 'flex'
+        }
+    }
+    
+    function closetab(data1,data2){
+        if(data1 == 1){
+            var x = document.getElementsByTagName("iframe");
+            for(var i = 0; i < x.length; ++i){
+                x[i].style.display = 'none'
+            }
+        }
+    }
+    function gotab(x,y,iframeid){
+        console.log(x + ' 0 ' + y + ' 0')
+        document.getElementById(iframeid).style.marginTop = x + 'px'
+        document.getElementById(iframeid).style.marginLeft = y + 'px'
+    
+    }
+    function re(iframeid){
+        redata = document.getElementById(iframeid).src
+        document.getElementById(iframeid).src = '';
+        document.getElementById(iframeid).src = redata
+    }
+    function tobig(num1,num2,tf1){
+        document.getElementById('ifr2').style.width = num1 + '%'
+        document.getElementById('ifr2').style.height = num2 + '%'
+        if(tf1 == "1"){
+            document.body.style.overflow = "hidden";
+        }
+
+    }
+
+        </script>
+    <style>
+        body{
+            margin: 0;
+            background-color: #000;
+            color: #fff;
+            width: 100%;
+            height: 100%;
+        }
+        .app{
+            width: 200px;
+            min-height: 230px;
+            background-color: #333;
+            margin: 10px;
+            text-align: center;
+            display: inline-block;
+            text-decoration: none;
+            color: #fff;
+        }
+        .app img{
+            width: 200px;
+            height: 200px;
+            display: block;
+            background-color: #222;
+        }
+        iframe{
+            width: 80%;
+            height: 80%;
+        position: absolute;
+        display: none;
+        top: 0;
+        left: 0;
+        }
+        .rside{
+            display: block;
+            position: absolute;
+            background-color: #444;
+            width: 5%;
+            height: 100%;
+            top: 0;
+            right: 0;
+        }
+        .rside button{
+            width: 100%;
+            height: 10%;
+        }
+    </style>
+</head>
+<body id="body"><br>
+    
+    <div style="display: inline-block;top: 0;">
+    <a href="https://www.google.com" target="_blank" rel="noopener noreferrer" class="app"><img src="img/google.png">google</a>
+    <a href="#" class="app" onclick="gettab(1,'2e/index.html')" ><img src="">2e</a>
+    <a href="#" class="app" onclick="gettab(1,'ss/index.html')" ><img src="">ss</a>
+    <a href="https://www.google.com/search?q=機械姦&tbm=isch" target="_blank" rel="noopener noreferrer" class="app"><img src="img/tango.png">単語検索</a>
+    <a href="index.html" class="app"><img src="img/tango.png">ログアウト</a>
+    <figure>
+        <figcaption>Listen to the T-Rex:</figcaption>
+        <audio controls src="./t-rex-roar.mp3">
+        </audio>
+    </figure>
+    
+</div>
+    	
+
+    <div class="rside">
+        <button onclick="if(document.getElementById('ifr2').style.display == 'flex'){document.getElementById('ifr2').requestFullscreen();}">Fullscreen</button>
+        <button onclick="tobig(100,100,'1')">big</button>
+        <button onclick="closetab(1)">close</button>
+        <button onclick="gotab(200,0,'ifr2')">close</button>
+        <button onclick="re('ifr2')">re</button>
+
+
+    </div>
+    <button onclick="tobig(100,100,'1')" style="display: block; position: fixed;bottom: 0;left: 0; background-color: rgba(255, 255, 255, 0.534);">big</button>
+</body>
+</html>
