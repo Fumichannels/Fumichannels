@@ -1,0 +1,76 @@
+<style>
+    body{
+        width: 100%;
+        height: 100%;
+        margin: 0;
+        text-align: center;
+        
+        background-color: #000;
+    }
+    .img-body{
+        height: 98%;
+    }
+    img{
+        height: 100%;
+        margin: 0.5%;
+    }
+    .but{
+        opacity: 0;
+        background-color: #000;
+        width: 30%;
+        position: absolute;
+    }
+    .but.lef{
+        height: 100%;
+        top: 0;
+        left: 0;
+    }
+    .but.rig{
+        height: 100%;
+        top: 0;
+        right: 0;
+    }
+</style>
+
+<body id="body">
+    <div class="img-body">
+        <img src="" id="pic">
+    </div>
+    <div class="but lef" onclick="imgindex -= 1;road()"></div>
+    <div class="but rig" onclick="imgindex += 1;road()"></div>
+</body>
+
+<script>
+    //urlフラグメント(#のあと)を取得
+            getdata(window.location.hash.slice(1))
+    
+    imgindex = 0
+    function road(){
+        if(imgindex >= data.length) imgindex = 0
+        if(imgindex < 0) imgindex = data.length -1
+        document.getElementById("pic").src = data[imgindex]
+    }
+    function getdata(filename){
+        ajax = new XMLHttpRequest();
+        ajax.open("get", filename + ".txt");
+        ajax.send(); // 通信させます。
+        ajax.addEventListener("load", function(){ // loadイベントを登録します。
+            data = this.response; // 通信結果を出力します。
+            data = this.response.split(/\r\n/);
+            for (let i = 0; i < data.length; i++) {
+                if(data[i].indexOf("//")>-1) data[i] = data[i].slice(0,data[i].indexOf("//"))
+                data[i] = filename + "/" + data[i]
+            }
+            road()
+        }, false);
+    }
+
+    //キー操作
+    
+document.onkeydown = checkKey;
+
+function checkKey(e) {
+    if (event.keyCode == '37') {imgindex -= 1;road()}
+    else if (event.keyCode == '39') {imgindex += 1;road()}
+}
+</script>
