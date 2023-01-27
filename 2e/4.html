@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GRAYCODE JavaScript</title>
+    <script>
+        var startX = null;
+        var endX = null;
+
+        i=0;
+        pics_src = [
+            "00000.jpg",
+            "000001.jpg",
+            "00001.jpg",
+            "000002.jpg",
+            "10001.jpg",
+            "10002.jpg",
+            "10003.jpg",
+            "10004.jpg",
+            "10005.jpg",
+            "10006.jpg",
+            "10007.jpg",
+            "10008.jpg",
+            "10009.jpg",
+            "10010.jpg",
+            "10011.jpg",
+            "10012.jpg",
+            "10013.jpg",
+            "ea2a29322aa4dc48a203979b7b1f0f5a.jpg",
+            '23fbc2549a436a2de8754c5e3848623d.jpg',
+            '10963.jpg',
+            '10978.jpg',
+            '10339.jpg',
+            '10479.jpg',
+            '10077.jpg',//2022/11/03
+            '10099.jpg',//2022/11/03
+            '10115.jpg',//2022/11/03
+            '10135.jpg',//2022/11/03
+        ];
+
+        function slideshows(num){
+            i=i+num
+            if(i==-1) i=pics_src.length-1;
+            if(i==pics_src.length) i=0;
+            
+document.getElementById("mypic").src=pics_src[i];
+console.log(i)
+        }
+
+
+
+    </script>
+    <style>
+        html, body {
+            height: 100%;
+            margin: 0;
+            width: 100%;
+            height: 100%;
+            text-align: center;
+            
+            background-color: #000;
+        }
+        body::-webkit-scrollbar { 
+  display: none !important;
+}
+        #content1 {
+            background-color: #22222255;
+            position: absolute;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            margin: 0;
+        }
+        #content1 {
+            background-color: #22222255;
+            position: absolute;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            margin: 0;
+        }
+        .content2 {
+            background-color: #777;
+            position: absolute;
+            top: 0;
+            width: 20%;
+            height: 100%;
+        }
+        #mypic{
+            
+  object-fit: contain;
+  width: 100%;
+  height: 100%;
+        }
+        .imgs{
+  position: relative;
+  width:  60%;
+  height: 100%;
+  border: 1px solid black;
+  margin: 0 auto;
+
+
+}
+button{
+    border: none;
+}
+    </style>
+</head>
+
+<body id="content1" onclick="document.getElementById('content1').requestFullscreen();">
+    <button class="content2" style="left: 0;" onclick="slideshows(-1)"></button>
+    <div class="imgs"  ><img src="00000.jpg" id="mypic" ></div>
+    <button class="content2" style="right: 0;" onclick="slideshows(1)"></button>
+</body>
+
+</html>

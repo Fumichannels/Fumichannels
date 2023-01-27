@@ -1,0 +1,100 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+
+
+
+
+
+    var pics_src = [
+        "00000.jpg",
+        "000001.jpg",
+        "00001.jpg",
+        "000002.jpg",
+        "10001.jpg",
+        "10002.jpg",
+        "10003.jpg",
+        "10004.jpg",
+        "10005.jpg",
+        "10006.jpg",
+        "10007.jpg",
+        "10008.jpg",
+        "10009.jpg",
+        "10010.jpg",
+        "10011.jpg",
+        "10012.jpg",
+        "10013.jpg",
+        "ea2a29322aa4dc48a203979b7b1f0f5a.jpg",
+        '23fbc2549a436a2de8754c5e3848623d.jpg',
+        '10963.jpg',
+        '10978.jpg',
+        '10339.jpg',
+        '10479.jpg',
+        '10077.jpg',//2022/11/03
+        '10099.jpg',//2022/11/03
+        '10115.jpg',//2022/11/03
+        '10135.jpg',//2022/11/03
+]
+
+
+i=0;
+
+function slideshows(num){
+
+        i=Number(i)+Number(num)
+        if(pics_src.length<=i) i=0
+    if(i<0) i=pics_src.length-1
+        document.getElementById("mypic").src = pics_src[i]
+        console.log(i)
+    }
+
+    pw = prompt("パスワードを入れて下さい。", "");
+    if (pw == 'asd') {
+    } else {
+
+        document.getElementById('button1').style.display = 'none';
+    }
+
+    window.addEventListener('load', function () {
+
+        // フルスクリーン表示
+        document.getElementById('button1').addEventListener('click', function () {
+
+        });
+    });
+    </script>
+
+</head>
+<body bgcolor="black" text="white" style="text-align: center;height: 500px;" id="button1">
+    <button onclick="slideshows('-1')"
+        style="border-color:rgba(0,0,0,0);position:absolute;top:0%;left:0%;width:40%;height:100%;background-color: rgba(255, 255, 255,0.1);">
+        
+    </button>
+    <img id="mypic" src="00000.jpg" style="margin: auto;height: 100%;">
+
+    <button onclick="slideshows('1')"
+        style="border-color:rgba(0,0,0,0);position:absolute;top:0%;right:0%;width:40%;height:100%;background-color: rgba(255, 255, 255,0.1);">
+
+
+    </button>
+    
+    <br>
+
+</body>
+<script>
+
+
+
+
+
+document.getElementById('mypic').style.height = document.documentElement.clientHeight + "px"
+
+
+</script>
+</html>
