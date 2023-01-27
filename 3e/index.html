@@ -1,0 +1,132 @@
+<html>
+    <meta charset="utf-8">
+<body bgcolor="black" text="white"  style="text-align: center" id="button1">
+<script>
+
+window.addEventListener('load', function(){
+			
+    // フルスクリーン表示
+    document.getElementById('button1').addEventListener('click', function(){
+        				
+    });
+});
+</script>
+
+<img id="mypic" src="175956udufhpzh0jrdsp47.jpg" height="100%">
+<script>
+
+var pics_src = new Array(
+"175956udufhpzh0jrdsp47.jpg",
+"175957xf9fvv0v1kxt1fzv.jpg",
+"175958f80efxcpwf08w6ow.jpg",
+"175959bc95if9mtmoilixz.jpg",
+"180000iyclx2iloiggdyx7.jpg",
+"1800015zagxzqqtzgaqdxh.jpg",
+"180002qsyrtrrtyyk6rst6.jpg",
+"180003ps6j5iege06sujz7.jpg",
+"180004bqw8mhqzwh7hp8br.jpg",
+"1800071zsk7r7v07d02jzk.jpg",
+"180010vevyj6zd6vhjij96.jpg",
+"180015vabaend42xvoaata.jpg",
+"180018ox4cjxoe1szbpdxb.jpg",
+"180020avsj032rr08za0am.jpg",
+"180020kboycicihht0yrmb.jpg",
+"180021lfntdirdul9yr58o.jpg",
+"180024e9bubz9qk2288v88.jpg",
+"180027yc2y1hcs2smj22oq.jpg",
+"180030uaazf4bmhakafmha.jpg",
+"1800358nni1m8pl1ijhupl.jpg",
+"180038cd5cpu8p590u5gcc.jpg",
+"180038cuczjhj1f9xp9uix.jpg",
+"180039paz7n7o7d77dddzc.jpg",
+"180040bexovax6ex0mmx8m.jpg",
+"180044t7x5xs3tp375z5h9.jpg",
+"180047mimzsbdqq5ixmsma.jpg",
+"1800504fffa5m5atwasspc.jpg",
+"180053q5gj33hi355ix395.jpg",
+"180057ffq57367qkrzqy1x.jpg",
+"180058n1wjec48yssjsy4e.jpg",
+"180059fi3xv969v9zrgxv2.jpg",
+"180100tn9a57n8tzrjvx5t.jpg",
+"180100mg4yn2nnngnpwvgc.jpg",
+"180101usztti3i8kgj5npj.jpg",
+"180247q4cj33gg5gda82qg.jpg",
+"180248vjzmhmlmxzhvmheb.jpg",
+"180249nnmnfbwgzm6nbn4l.jpg",
+"180249xjbssb0ztyk4id4x.jpg",
+"1804004kk3ndznz8in2k3y.jpg",
+"180401gwdfj5d5e5y5f4m6.jpg",
+"180402h7t07szqevssvspt.jpg",
+"180403c2a92by49ymnqofs.jpg",
+"18040478g9gcti8fb37gyc.jpg",
+"180405a1h4s1p4suur10sa.jpg",
+"180405y9zny7jnnnszpnit.jpg",
+"180406k59z5iieai9z59i9.jpg",
+"1804105wn1kfpfw558ih8z.jpg",
+"180415or2lknn3lw2iek3w.jpg",
+"180420me1b74qnemxbq1xf.jpg",
+"180422i8ki5lpa0lilc85q.jpg",
+"180422zf2424jf4z2qjgfu.jpg",
+"180423rirooy5y551yo2do.jpg",
+"180424xrbo3mzb4emoomg4.jpg",
+"18042564rdp8jd924d5wd5.jpg",
+"18042631yujc13dtahzfdh.jpg",
+"1804263v8k79b9k7941biz.jpg",
+"1804271hhjyfygsl0h8log.jpg",
+
+
+);
+var num = 0;
+
+function slideshows(){
+    
+if (num == pics_src.length-1) {
+num = 0;
+}
+else {
+num ++;
+}
+document.getElementById("mypic").src=pics_src[num];
+}
+
+
+function slideshows2(){
+    
+if (num == 0) {
+num = pics_src.length-1;
+}
+else {
+num --;
+}
+document.getElementById("mypic").src=pics_src[num];
+}
+
+
+document.onkeydown = checkKey;
+
+function checkKey(e) {
+
+    if (event.keyCode == '37') {slideshows2()}
+    else if (event.keyCode == '39') {slideshows()}
+    else if (event.keyCode == '32') {close()}
+}
+
+
+
+
+
+
+</script>
+<span onclick="slideshows2()" style="border-color:rgba(0,0,0,0);position:absolute;top:0%;left:0%;width:40%;height:70%;background-color: rgba(255, 255, 255,0);">
+
+</span>
+
+<span onclick="slideshows()"style="border-color:rgba(0,0,0,0);position:absolute;top:0%;right:0%;width:40%;height:100%;background-color: rgba(255, 255, 255, 0);">
+
+</span><br>
+
+<span onclick="document.documentElement.requestFullscreen();"style="border-color:rgba(0,0,0,0);position:absolute;top:60%;left:0%;width:40%;height:10%;background-color: rgba(255, 255, 255, 0);">
+
+</span><br>
+
+</body>
